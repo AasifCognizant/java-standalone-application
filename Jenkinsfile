@@ -2,13 +2,15 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK17'
+        // These must match names configured in Jenkins > Global Tool Configuration
+        jdk 'JDK22'
         maven 'Maven3'
     }
 
     stages {
         stage('Checkout') {
-                           git url: 'https://github.com/AasifCognizant/java-standalone-application.git', branch: 'main'
+            steps {
+                git url: 'https://github.com/AasifCognizant/java-standalone-application.git', branch: 'main'
             }
         }
 
@@ -35,3 +37,4 @@ pipeline {
             }
         }
     }
+}
