@@ -8,9 +8,7 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                // Replace with your Git repository URL
-                git url: 'https://github.com/AasifCognizant/java-standalone-application.git', branch: 'main'
+                           git url: 'https://github.com/AasifCognizant/java-standalone-application.git', branch: 'main'
             }
         }
 
@@ -22,17 +20,13 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                // If you have a run command, add it here
-                // Example: sh 'java -jar target/your-app.jar'
-                echo 'Running application...'
+                sh 'mvn exec:java'
             }
         }
 
         stage('Test') {
             steps {
-                // This assumes tests are run during the build phase
-                // If separate, use: sh 'mvn test'
-                echo 'Tests executed during build phase'
+                sh 'mvn test'
             }
             post {
                 always {
