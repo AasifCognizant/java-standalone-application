@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'mvn clean install'
+                bat 'java -jar target/java-standalone-application-1.0-SNAPSHOT.jar'
             }
         }
 
