@@ -15,13 +15,13 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'java -jar target/java-standalone-application-1.0-SNAPSHOT.jar'
+                bat 'mvn clean package'
             }
         }
 
         stage('Run Application') {
             steps {
-                bat 'mvn exec:java'
+                bat 'java -jar target/java-standalone-application-1.0-SNAPSHOT.jar'
             }
         }
 
