@@ -8,16 +8,32 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            // write your logic here
+            steps {
+                // Replace with your Git repository URL
+                git url: 'https://github.com/AasifCognizant/java-standalone-application.git', branch: 'main'
+            }
         }
+
         stage('Build') {
-            // write your logic here
+            steps {
+                sh 'mvn clean install'
+            }
         }
+
         stage('Run Application') {
-            // write your logic here
+            steps {
+                // If you have a run command, add it here
+                // Example: sh 'java -jar target/your-app.jar'
+                echo 'Running application...'
+            }
         }
+
         stage('Test') {
-            // write your logic here
+            steps {
+                // This assumes tests are run during the build phase
+                // If separate, use: sh 'mvn test'
+                echo 'Tests executed during build phase'
+            }
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
