@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'echo mvn clean install'
+                bat 'echo mvn clean install'
             }
         }
     }
