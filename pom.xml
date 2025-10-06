@@ -10,17 +10,17 @@
     <name>java-standalone-application</name>
 
     <dependencies>
-        <!-- JUnit for testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
-           </dependencies>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
-            <!-- Compiler plugin for Java 17 or 22 -->
+            <!-- Java compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
