@@ -28,7 +28,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'echi "mvn test" '
+                sh 'echo "mvn test" '
             }
             post {
                 always {
