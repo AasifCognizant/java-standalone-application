@@ -13,5 +13,10 @@ pipeline {
                 git url: 'https://github.com/AasifCognizant/java-standalone-application.git', branch: 'main'
             }
         }
+        stage('Build') {
+            steps {
+                sh 'echo mvn clean install'
+            }
+        }
     }
 }
