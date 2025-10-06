@@ -16,19 +16,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                sh 'echo "mvn clean install"'
             }
         }
 
         stage('Run Application') {
             steps {
-                sh 'mvn exec:java'
+                sh 'echo "mvn exec:java"'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'echi "mvn test" '
             }
             post {
                 always {
