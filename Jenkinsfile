@@ -13,28 +13,5 @@ pipeline {
                 git url: 'https://github.com/AasifCognizant/java-standalone-application.git', branch: 'main'
             }
         }
-
-        stage('Build') {
-            steps {
-                sh 'echo "mvn clean install"'
-            }
-        }
-
-        stage('Run Application') {
-            steps {
-                sh 'echo "mvn exec:java"'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'echo "mvn test" '
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
     }
 }
