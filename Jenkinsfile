@@ -15,7 +15,24 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'echo mvn clean install'
+                bat 'mvn clean install'
+            }
+        }
+
+        stage('Run Application') {
+            steps {
+                bat 'mvn exec:java'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
             }
         }
     }
